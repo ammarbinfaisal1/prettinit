@@ -1,0 +1,10 @@
+---
+  printWidth: 80
+  tabWidth: 2
+  semi: true
+  trailingComma: "Wherever vaild in es5."
+  bracketSpacing: true
+  arrowParens: "avoid"
+  parser: "flow"
+  singleQuote: false
+  useTabs: true

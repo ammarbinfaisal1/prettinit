@@ -1,0 +1,22 @@
+{
+  "name": "pretinit",
+  "version": "0.7.0",
+  "description": "A simple cli tool for setting up .prettierrc file",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "prettier": "prettier --write app.js ./lib/*"
+  },
+  "author": "Ammar",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "json2yaml": "^1.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.12.1"
+  },
+  "bin": {
+    "pretinit": "./app.js"
+  }
+}
