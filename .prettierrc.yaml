@@ -1,8 +1,8 @@
 ---
   printWidth: 80
-  tabWidth: 2
+  tabWidth: 4
   semi: true
-  trailingComma: "Wherever vaild in es5."
+  trailingComma: "none"
   bracketSpacing: true
   arrowParens: "avoid"
   parser: "flow"
