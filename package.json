@@ -1,5 +1,5 @@
 {
-  "name": "pretinit",
+  "name": "prettinit",
   "version": "0.7.0",
   "description": "A simple cli tool for setting up .prettierrc file",
   "main": "app.js",
@@ -21,6 +21,6 @@
     "prettier": "^1.12.1"
   },
   "bin": {
-    "pretinit": "./app.js"
+    "prettinit": "./app.js"
   }
 }
