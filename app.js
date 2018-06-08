@@ -13,7 +13,7 @@ const cli = meow(
 	
 	Options
 		--set-default, -D  set the the current directory's prettier config file as default
-		--use-default, -d  use the default config file in the current directory
+		--write-default, -W  write the default config file in the current directory
 `,
 	{
 		flags: {
@@ -21,13 +21,22 @@ const cli = meow(
 				type: "boolean",
 				alias: "D"
 			},
-			"use-default": {
+			"write-default": {
 				type: "boolean",
-				alias: "d"
+				alias: "W"
 			}
 		}
 	}
 );
+
+const flagUsed = false;
+
+for (const flag in cli.flags) {
+	if (cli.flags.hasOwnProperty(flag) && cli.flags[flag]) {
+		flagUsed = true;
+		break;
+	}
+}
 
 if (cli.flags.setDefault) setDefault();
 else if (cli.flags.useDefault) useDefault();
