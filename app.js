@@ -2,7 +2,7 @@
 
 const inquirer = require("./lib/inquirer"),
 	{ setDefault } = require("./lib/setDefault"),
-	{ useDefault } = require("./lib/useDefault"),
+	{ writeDefault } = require("./lib/writeDefault"),
 	pkg = require("./lib/pkg"),
 	log = require("./lib/logger"),
 	fs = require("fs"),
@@ -39,7 +39,7 @@ for (const flag in cli.flags) {
 }
 
 if (cli.flags.setDefault) setDefault();
-else if (cli.flags.writeDefault) useDefault();
+else if (cli.flags.writeDefault) writeDefault();
 else if (!flagUsed) {
 	// check for package.json file
 	// if it exists then prompt the questions to the user
