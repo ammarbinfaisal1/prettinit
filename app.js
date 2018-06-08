@@ -29,7 +29,7 @@ const cli = meow(
 	}
 );
 
-const flagUsed = false;
+let flagUsed = false;
 
 for (const flag in cli.flags) {
 	if (cli.flags.hasOwnProperty(flag) && cli.flags[flag]) {
@@ -39,8 +39,8 @@ for (const flag in cli.flags) {
 }
 
 if (cli.flags.setDefault) setDefault();
-else if (cli.flags.useDefault) useDefault();
-else {
+else if (cli.flags.writeDefault) useDefault();
+else if (!flagUsed) {
 	// check for package.json file
 	// if it exists then prompt the questions to the user
 	if (!pkg.exists()) {
@@ -50,4 +50,6 @@ else {
 		log.warning("\x1b[1mprettier is not a dev dependency of this project"); // \x1b[0m === reset & \x1b[1m === bright
 		inquirer.confirmCreationOfConfigFile();
 	} else inquirer.askSetupQuestions();
+} else {
+	log.error("An invalid flag has been used.");
 }
