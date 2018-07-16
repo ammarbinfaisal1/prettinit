@@ -8,6 +8,6 @@ The only thing it lacks is that it cannot set [overrides](https://prettier.io/do
 * navigate to it
 * run `npm install -g`
 
-### Options
+### Usage Options
     --set-default, -D  set the the current directory's prettier config file as default
-    --use-default, -d  use the default config file in the current directory
+  	--write-default, -W  write the default config file in the current directory
