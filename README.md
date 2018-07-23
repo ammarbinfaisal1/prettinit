@@ -1,12 +1,9 @@
 # prettinit
 
-This is a simple command line tool for setting up .prettierrc file (configuration file for [prettier](prettier.io)).
-The only thing it lacks is that it cannot set [overrides](https://prettier.io/docs/en/configuration.html#configuration-overrides). 
+This is a simple command line tool for setting up .prettierrc file (configuration file for [prettier](prettier.io)). You can also set a prettierrc file as default and use it in other prejects.
 
 ### Installation
-* clone or download this repository
-* navigate to it
-* run `npm install -g`
+    `npm i -g prettinit`
 
 ### Options
     --set-default, -D  set the the current directory's prettier config file as default
