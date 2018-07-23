@@ -2,12 +2,17 @@
   "name": "prettinit",
   "version": "0.7.0",
   "description": "A simple cli tool for setting up .prettierrc file",
+  "keywords": [
+    "cli",
+    "prettier",
+    "prettierrc"
+  ],
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "prettier": "prettier --write app.js ./lib/*"
   },
-  "author": "Ammar",
+  "author": "Ammar <bnfaisal.ammar@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "boxen": "^1.3.0",
@@ -22,5 +27,16 @@
   },
   "bin": {
     "prettinit": "./app.js"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammarbinfaisal/prettinit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ammarbinfaisal/prettinit/issues"
+  },
+  "homepage": "https://github.com/ammarbinfaisal/prettinit#readme"
 }
