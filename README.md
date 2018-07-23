@@ -5,6 +5,6 @@ This is a simple command line tool for setting up .prettierrc file (configuratio
 ### Installation
     `npm i -g prettinit`
 
-### Options
+### Usage Options
     --set-default, -D  set the the current directory's prettier config file as default
-    --use-default, -d  use the default config file in the current directory
+  	--write-default, -W  write the default config file in the current directory
