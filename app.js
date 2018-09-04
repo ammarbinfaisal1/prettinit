@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-const inquirer = require("./lib/inquirer"),
-	{ setDefault } = require("./lib/setDefault"),
-	{ writeDefault } = require("./lib/writeDefault"),
-	pkg = require("./lib/pkg"),
-	log = require("./lib/logger"),
-	fs = require("fs"),
-	meow = require("meow");
+const meow = require("meow");
+const inquirer = require("./lib/inquirer");
+const { setDefault } = require("./lib/setDefault");
+const { writeDefault } = require("./lib/writeDefault");
+const pkg = require("./lib/pkg");
+const log = require("./lib/logger");
 
 const cli = meow(
 	`
@@ -32,24 +31,33 @@ const cli = meow(
 let flagUsed = false;
 
 for (const flag in cli.flags) {
-	if (cli.flags.hasOwnProperty(flag) && cli.flags[flag]) {
+	if (
+		Object.prototype.hasOwnProperty.call(cli.flags, "flag") &&
+		cli.flags[flag]
+	) {
 		flagUsed = true;
 		break;
 	}
 }
 
-if (cli.flags.setDefault) setDefault();
-else if (cli.flags.writeDefault) writeDefault();
-else if (!flagUsed) {
-	// check for package.json file
+if (cli.flags.setDefault) {
+	setDefault();
+} else if (cli.flags.writeDefault) {
+	writeDefault();
+} else if (!flagUsed) {
+	// Check for package.json file
 	// if it exists then prompt the questions to the user
 	if (!pkg.exists()) {
 		log.warning("There is no package.json file in the current directory.");
 		inquirer.confirmCreationOfConfigFile();
 	} else if (!pkg.hasPrettierAsDevDependency()) {
-		log.warning("\x1b[1mprettier is not a dev dependency of this project"); // \x1b[0m === reset & \x1b[1m === bright
+		log.warning(
+			"\u001B[1mprettier is not a dev dependency of this project"
+		); // \x1b[0m === reset & \x1b[1m === bright
 		inquirer.confirmCreationOfConfigFile();
-	} else inquirer.askSetupQuestions();
+	} else {
+		inquirer.askSetupQuestions();
+	}
 } else {
 	log.error("An invalid flag has been used.");
 }
