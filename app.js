@@ -2,8 +2,8 @@
 
 const meow = require("meow");
 const inquirer = require("./lib/inquirer");
-const { setDefault } = require("./lib/setDefault");
-const { writeDefault } = require("./lib/writeDefault");
+const setDefault = require("./lib/set-default");
+const writeDefault = require("./lib/write-default");
 const pkg = require("./lib/pkg");
 const log = require("./lib/logger");
 
@@ -51,9 +51,7 @@ if (cli.flags.setDefault) {
 		log.warning("There is no package.json file in the current directory.");
 		inquirer.confirmCreationOfConfigFile();
 	} else if (!pkg.hasPrettierAsDevDependency()) {
-		log.warning(
-			"\u001B[1mprettier is not a dev dependency of this project"
-		); // \x1b[0m === reset & \x1b[1m === bright
+		log.warning("\u001B[1mprettier is not a dev dependency of this project"); // \x1b[0m === reset & \x1b[1m === bright
 		inquirer.confirmCreationOfConfigFile();
 	} else {
 		inquirer.askSetupQuestions();
