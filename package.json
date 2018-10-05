@@ -16,6 +16,7 @@
   "author": "Ammar <binfaisal.ammar@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.1",
     "configstore": "^3.1.2",
     "inquirer": "^5.2.0",
     "json2yaml": "^1.1.0",
