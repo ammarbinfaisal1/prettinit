@@ -27,12 +27,8 @@ const cli = meow(
 );
 
 let flagUsed = false;
-
 for (const flag in cli.flags) {
-	if (
-		Object.prototype.hasOwnProperty.call(cli.flags, "flag") &&
-		cli.flags[flag]
-	) {
+	if (Object.prototype.hasOwnProperty.call(cli.flags, "flag") && cli.flags[flag]) {
 		flagUsed = true;
 		break;
 	}
@@ -46,10 +42,10 @@ if (cli.flags.setDefault) {
 	// Check for package.json file
 	// if it exists then prompt the questions to the user
 	if (!pkg.exists()) {
-		log.warning("There is no package.json file in the current directory.");
+		log.warn("There is no package.json file in the current directory.");
 		inquirer.confirmCreationOfConfigFile();
 	} else if (!pkg.hasPrettierAsDevDependency()) {
-		log.warning("prettier is not a dev dependency of this project");
+		log.warn("prettier is not a dev dependency of this project");
 		inquirer.confirmCreationOfConfigFile();
 	} else {
 		inquirer.askSetupQuestions();
