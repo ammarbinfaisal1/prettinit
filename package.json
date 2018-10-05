@@ -1,6 +1,6 @@
 {
   "name": "prettinit",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "A simple cli tool for setting up .prettierrc file",
   "keywords": [
     "cli",

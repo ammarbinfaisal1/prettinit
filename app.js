@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const meow = require("meow");
 const inquirer = require("./lib/inquirer");
 const setDefault = require("./lib/set-default");
