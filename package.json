@@ -1,6 +1,6 @@
 {
   "name": "prettinit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple cli tool for setting up .prettierrc file",
   "keywords": [
     "cli",
@@ -10,7 +10,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "prettier": "prettier --write app.js ./lib/*",
+    "prettier": "prettier --write app.js ./lib/*.js",
     "test": "xo"
   },
   "author": "Ammar <binfaisal.ammar@gmail.com>",
